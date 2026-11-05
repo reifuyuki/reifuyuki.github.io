@@ -217,12 +217,23 @@ p { margin: 0 0 1rem; }
 }
 
 .sidebar__foot {
-  margin-top: auto;
+  position: relative;
+  margin-top: 0;
   padding-top: 2rem;
   font-size: 0.7rem;
   line-height: 1.9;
   letter-spacing: 0.07em;
   color: #fff;
+}
+
+.sidebar__foot::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -3.5rem;
+  width: 12.890625rem;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.58);
 }
 
 .sidebar__foot p { margin: 0; }
@@ -370,6 +381,67 @@ p { margin: 0 0 1rem; }
 
 .ring-nav a:hover { background: #d2cde6; }
 .sidebar .ring-nav a:hover { background: rgba(255, 255, 255, 0.22); }
+
+.webring-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 0.6rem;
+  margin-top: 0.8rem;
+}
+
+.webri-anime {
+  width: 100%;
+  max-width: 16rem;
+  min-width: 0;
+  margin: auto auto 0;
+  padding: 1.25rem 1.4rem;
+  border: 1px dashed rgba(255, 255, 255, 0.78);
+  color: #fff;
+  font-size: 0.65rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.webri-anime__title,
+.webri-anime__nav a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
+.webri-anime__title {
+  display: block;
+  margin-bottom: 0.65rem;
+}
+
+.webri-anime .webring-badge {
+  display: block;
+  width: 88px;
+  max-width: 100%;
+  margin: 0 auto 0.65rem;
+}
+
+.webring-grid > a {
+  display: block;
+  width: 100%;
+  max-width: 12.5rem;
+  justify-self: center;
+}
+
+.webring-grid > a img {
+  width: 100%;
+  height: auto;
+}
+
+.webri-anime__nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.2rem 0.35rem;
+  margin-top: 0.25rem;
+  font-size: 0.55rem;
+}
 
 /* footer inside the white box */
 
