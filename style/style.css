@@ -16,6 +16,14 @@ html {
   text-size-adjust: 100%;
 }
 
+html,
+body,
+body *,
+body *::before,
+body *::after {
+  cursor: url("../assets/cursor.png") 0 47, auto !important;
+}
+
 body {
   margin: 0;
   background: #c7c4be;             /* grey wall behind the site */
@@ -89,6 +97,7 @@ p { margin: 0 0 1rem; }
   left: 0;
   width: 37.65625rem;              /* 666.5px */
   height: 4.09355rem;              /* 81.5px */
+  pointer-events: none;
 }
 
 .strip__img {
@@ -249,7 +258,7 @@ p { margin: 0 0 1rem; }
   min-height: 181.71875rem;        /* 2907.5px */
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   padding: 4rem 7.5rem 3rem 30.78125rem;
   border: 0.125rem solid #332c2b;
   border-left: 0;                  /* the sidebar hugs this side */
@@ -260,6 +269,16 @@ p { margin: 0 0 1rem; }
     0 -0.5rem 2.5rem rgba(51, 44, 43, 0.28),
     0 1.5rem 3rem rgba(51, 44, 43, 0.18);
 }
+
+.coming-soon {
+  margin: 3rem 0 0;
+  color: #938d93;
+  font-family: "Old School", "Segoe Print", cursive;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.coming-soon h2 { margin: 0; }
 
 .section { scroll-margin-top: 2rem; }
 
@@ -432,6 +451,30 @@ p { margin: 0 0 1rem; }
 .webring-grid > a img {
   width: 100%;
   height: auto;
+}
+
+#custom-tooltip {
+	position: fixed;
+	z-index: 9999;
+	max-width: min(17rem, calc(100vw - 1rem));
+	padding: 0.35rem 0.65rem;
+	border-radius: 8px 0 8px 0;
+	background: #332c2b;
+	color: #fff;
+	font-family: "Segoe Print", "Segoe UI", "Trebuchet MS", system-ui, sans-serif;
+	font-size: 0.7rem;
+	line-height: 1.4;
+	pointer-events: none;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(0.2rem);
+	transition: opacity 0.12s ease, transform 0.12s ease, visibility 0.12s;
+}
+
+#custom-tooltip.is-visible {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
 }
 
 .webri-anime__nav {
